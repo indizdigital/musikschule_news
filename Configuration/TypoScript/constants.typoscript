@@ -1,0 +1,14 @@
+plugin.tx_indiznews_news {
+    view {
+        # cat=plugin.tx_indiznews_news/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:indiz_news/Resources/Private/Templates/
+        # cat=plugin.tx_indiznews_news/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:indiz_news/Resources/Private/Partials/
+        # cat=plugin.tx_indiznews_news/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:indiz_news/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_indiznews_news//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}
