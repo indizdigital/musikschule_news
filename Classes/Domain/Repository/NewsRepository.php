@@ -37,7 +37,7 @@ class NewsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     }*/
 
     public function findByCat($cats){
-
+      
       $table = 'tx_indiznews_domain_model_news';
       $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
       $dataMapper = GeneralUtility::makeInstance(ObjectManager::class)->get(DataMapper::class);
@@ -49,18 +49,15 @@ class NewsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 
         $catConstraints = [];
         foreach($categories as $c){
-          $catConstraints[] =
-             $queryBuilder->expr()->orX(
-               $queryBuilder->expr()->like('category', $queryBuilder->createNamedParameter("%," . $c)),
-               $queryBuilder->expr()->like('category', $queryBuilder->createNamedParameter("%," . $c.",%")),
-               $queryBuilder->expr()->like('category', $queryBuilder->createNamedParameter($c.",%")),
-               $queryBuilder->expr()->like('category', $queryBuilder->createNamedParameter($c)),
-             );
+          $catConstraints[] = $queryBuilder->expr()->like('category', $queryBuilder->createNamedParameter("%," . $c));
+          $catConstraints[] = $queryBuilder->expr()->like('category', $queryBuilder->createNamedParameter("%," . $c.",%"));
+          $catConstraints[] = $queryBuilder->expr()->like('category', $queryBuilder->createNamedParameter($c.",%"));
+          $catConstraints[] = $queryBuilder->expr()->like('category', $queryBuilder->createNamedParameter($c));
         }
 
 
 
-        $queryBuilder->select('*')->from($table)->where(
+        $queryBuilder->select('*')->from($table)->orWhere(
             ...$catConstraints
         )->orderBy("starttime","DESC");
 
