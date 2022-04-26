@@ -1,5 +1,5 @@
 {
-    "name": "indiz/indiz-news",
+    "name": "indiz/musikschule-news",
     "type": "typo3-cms-extension",
     "description": "",
     "authors": [],
@@ -36,7 +36,7 @@
         "typo3/cms": {
             "cms-package-dir": "{$vendor-dir}/typo3/cms",
             "web-dir": ".Build/public",
-            "extension-key": "indiz_news"
+            "extension-key": "musikschule_news"
         }
     }
 }
