@@ -1,0 +1,34 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<table class="tx-indiz-news">
+	<tr>
+		<td><f:translate key="tx_indiznews_domain_model_news.title" /></td>
+		<td>{news.title}</td>
+	</tr>
+	<tr>
+		<td><f:translate key="tx_indiznews_domain_model_news.teaser" /></td>
+		<td>{news.teaser}</td>
+	</tr>
+	<tr>
+		<td><f:translate key="tx_indiznews_domain_model_news.bodytext" /></td>
+		<td>{news.bodytext}</td>
+	</tr>
+	<tr>
+		<td><f:translate key="tx_indiznews_domain_model_news.image" /></td>
+		<td>
+				<f:image src="{news.image.originalResource.publicUrl}" width="200"/>
+            </td>
+	</tr>
+	<tr>
+		<td><f:translate key="tx_indiznews_domain_model_news.href" /></td>
+		<td>{news.href}</td>
+	</tr>
+	<tr>
+		<td><f:translate key="tx_indiznews_domain_model_news.pdf" /></td>
+		<td>
+				<a href="{news.pdf.originalResource.publicUrl}">
+					{news.pdf.originalResource.name}
+				</a>
+			</td>
+	</tr>
+</table>
+</html>
