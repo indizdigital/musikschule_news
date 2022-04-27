@@ -59,7 +59,7 @@ class NewsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 
         $queryBuilder->select('*')->from($table)->orWhere(
             ...$catConstraints
-        )->orderBy("starttime","DESC");
+        )->orderBy("starttime","DESC")->orderBy("endtime","ASC");
 
 
 

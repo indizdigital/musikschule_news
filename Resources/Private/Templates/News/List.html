@@ -27,18 +27,21 @@ Otherwise your changes will be overwritten the next time you save the extension 
                     <f:variable name="isAgendaRecord" value="1" />
                   </f:if>
                 </f:for>
-                <f:debug>{anews}</f:debug>{anews.bla}
                 <f:if condition="{isAgendaRecord} == 1">
-                  <f:if condition="{anews.endtime}">
-                    <p>
-                      <f:format.date format="d.m.Y">{anews.endtime}</f:format.date>
-                    </p>
-                  </f:if>
-                </f:if>
-                <f:if condition="{anews.starttime}">
-                  <p>
-                    <f:format.date format="d.m.Y">{anews.starttime}</f:format.date>
-                  </p>
+                  <f:then>
+                    <f:if condition="{anews.endtime}">
+                      <p>
+                        <f:format.date format="d.m.Y">{anews.endtime}</f:format.date>
+                      </p>
+                    </f:if>
+                  </f:then>
+                  <f:else>
+                    <f:if condition="{anews.starttime}">
+                      <p>
+                        <f:format.date format="d.m.Y">{anews.starttime}</f:format.date>
+                      </p>
+                    </f:if>
+                  </f:else>
                 </f:if>
                 <h3 class="element-header">{anews.title}</h3>
               </header>

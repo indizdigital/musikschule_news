@@ -226,9 +226,9 @@ class News extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @return \int
      */
-    public function getBla()
+    public function getEndtime()
     {
-        return "bla";
+        return $this->endtime;
     }
 
     /**
