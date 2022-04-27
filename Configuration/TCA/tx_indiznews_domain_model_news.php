@@ -71,7 +71,7 @@ return [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
                 'eval' => 'datetime,int',
-                'default' => 0,
+                'default' => time(),
                 'behaviour' => [
                     'allowLanguageSynchronization' => true
                 ]

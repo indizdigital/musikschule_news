@@ -37,7 +37,7 @@ class NewsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     }*/
 
     public function findByCat($cats){
-      
+
       $table = 'tx_indiznews_domain_model_news';
       $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
       $dataMapper = GeneralUtility::makeInstance(ObjectManager::class)->get(DataMapper::class);

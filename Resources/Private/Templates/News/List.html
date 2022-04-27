@@ -21,12 +21,26 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <f:for each="{news}" as="anews" iteration="it">
             <div class="textmedia-item">
               <header class="frame-header">
-                <h2 class="element-header">{anews.title}</h2>
+                <f:variable name="isAgendaRecord" value="0" />
+                <f:for each="{anews.category}" as="cat">
+                  <f:if condition="{cat.uid} == 2">
+                    <f:variable name="isAgendaRecord" value="1" />
+                  </f:if>
+                </f:for>
+                <f:debug>{anews}</f:debug>{anews.bla}
+                <f:if condition="{isAgendaRecord} == 1">
+                  <f:if condition="{anews.endtime}">
+                    <p>
+                      <f:format.date format="d.m.Y">{anews.endtime}</f:format.date>
+                    </p>
+                  </f:if>
+                </f:if>
                 <f:if condition="{anews.starttime}">
                   <p>
                     <f:format.date format="d.m.Y">{anews.starttime}</f:format.date>
                   </p>
                 </f:if>
+                <h3 class="element-header">{anews.title}</h3>
               </header>
 
               <f:if condition="{anews.pdf}">
@@ -41,9 +55,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
             </div>
             <f:if condition="!{it.isLast}">
-              <div class="frame frame-size-default frame-default frame-type-div frame-layout-default frame-background-none frame-no-backgroundimage frame-space-before-medium frame-space-after-medium">
                 <hr/>
-              </div>
             </f:if>
         </f:for>
     </div>

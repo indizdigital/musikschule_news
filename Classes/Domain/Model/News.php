@@ -34,6 +34,13 @@ class News extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
        */
       protected $starttime = 0;
 
+      /**
+       * endtime
+       *
+       * @var int
+       */
+      protected $endtime = 0;
+
     /**
      * teaser
      *
@@ -212,6 +219,16 @@ class News extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function getStarttime()
     {
         return $this->starttime;
+    }
+
+    /**
+     * Returns the endtime
+     *
+     * @return \int
+     */
+    public function getBla()
+    {
+        return "bla";
     }
 
     /**
