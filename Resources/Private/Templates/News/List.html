@@ -1,0 +1,66 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        News:
+          List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+
+    <f:flashMessages />
+
+    <div class="tx_indiznews">
+        <f:for each="{news}" as="anews" iteration="it">
+            <div class="textmedia-item">
+              <header class="frame-header">
+                <f:variable name="isAgendaRecord" value="0" />
+                <f:for each="{anews.category}" as="cat">
+                  <f:if condition="{cat.uid} == 2">
+                    <f:variable name="isAgendaRecord" value="1" />
+                  </f:if>
+                </f:for>
+                <f:if condition="{isAgendaRecord} == 1">
+                  <f:then>
+                    <f:if condition="{anews.endtime}">
+                      <p>
+                        <f:format.date format="d.m.Y">{anews.endtime}</f:format.date>
+                      </p>
+                    </f:if>
+                  </f:then>
+                  <f:else>
+                    <f:if condition="{anews.starttime}">
+                      <p>
+                        <f:format.date format="d.m.Y">{anews.starttime}</f:format.date>
+                      </p>
+                    </f:if>
+                  </f:else>
+                </f:if>
+                <h3 class="element-header">{anews.title}</h3>
+              </header>
+
+              <f:if condition="{anews.pdf}">
+                <p><a href="{anews.pdf.originalResource.publicUrl}">
+                  <span>{anews.pdf.originalResource.name}</span>
+                </a></p>
+              </f:if>
+              <f:if condition="{anews.bodytext}">
+                <p><f:format.raw>{anews.bodytext}</f:format.raw></p>
+              </f:if>
+              <f:link.action action="show" arguments="{news : anews}">{anews.href}</f:link.action>
+
+            </div>
+            <f:if condition="!{it.isLast}">
+                <hr/>
+            </f:if>
+        </f:for>
+    </div>
+</f:section>
+</html>

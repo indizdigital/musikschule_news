@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:indiz_news/Resources/Private/Language/locallang.xlf" date="2022-04-25T15:47:48Z" product-name="indiz_news">
+		<header/>
+		<body>
+			<trans-unit id="tx_indiznews_domain_model_news" resname="tx_indiznews_domain_model_news">
+				<source>News</source>
+			</trans-unit>
+			<trans-unit id="tx_indiznews_domain_model_news.title" resname="tx_indiznews_domain_model_news.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_indiznews_domain_model_news.teaser" resname="tx_indiznews_domain_model_news.teaser">
+				<source>Teaser</source>
+			</trans-unit>
+			<trans-unit id="tx_indiznews_domain_model_news.bodytext" resname="tx_indiznews_domain_model_news.bodytext">
+				<source>Bodytext</source>
+			</trans-unit>
+			<trans-unit id="tx_indiznews_domain_model_news.image" resname="tx_indiznews_domain_model_news.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_indiznews_domain_model_news.href" resname="tx_indiznews_domain_model_news.href">
+				<source>Href</source>
+			</trans-unit>
+			<trans-unit id="tx_indiznews_domain_model_news.pdf" resname="tx_indiznews_domain_model_news.pdf">
+				<source>Pdf</source>
+			</trans-unit>
+			<trans-unit id="tx_indiznews_domain_model_category" resname="tx_indiznews_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_indiznews_domain_model_category.title" resname="tx_indiznews_domain_model_category.title">
+				<source>Title</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
