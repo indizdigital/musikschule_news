@@ -15,6 +15,9 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
+        'security' => [
+            'ignorePageTypeRestriction' => true
+        ],
         'searchFields' => 'title',
         'iconfile' => 'EXT:indiz_news/Resources/Public/Icons/tx_indiznews_domain_model_category.gif'
     ],

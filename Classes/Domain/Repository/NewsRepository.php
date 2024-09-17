@@ -9,7 +9,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
  use TYPO3\CMS\Core\Database\ConnectionPool;
  use TYPO3\CMS\Extbase\Persistence\Generic\Mapper\DataMapper;
- use TYPO3\CMS\Extbase\Object\ObjectManager;
 
 /**
  * This file is part of the "News" Extension for TYPO3 CMS.
@@ -26,21 +25,12 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 class NewsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
 
-    /*public function initializeObject()
-    {
-            // get the current settings
-            $querySettings = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\Typo3QuerySettings');
-            // change the default setting, whether the storage page ID is ignored by the plugins (FALSE) or not (TRUE - default setting)
-            $querySettings->setRespectStoragePage(FALSE);
-            // store the new setting(s)
-            $this->setDefaultQuerySettings($querySettings);
-    }*/
 
     public function findByCat($cats,$sorting){
 
       $table = 'tx_indiznews_domain_model_news';
       $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
-      $dataMapper = GeneralUtility::makeInstance(ObjectManager::class)->get(DataMapper::class);
+      $dataMapper = GeneralUtility::makeInstance(DataMapper::class);
 
         $constraints = [];
 

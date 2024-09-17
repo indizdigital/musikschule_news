@@ -8,29 +8,6 @@
 		</TCEforms>
 		<type>array</type>
 		<el>
-		  <switchableControllerActions>
-			<TCEforms>
-			  <label>Standardaktion des Plugins</label>
-			  <config>
-				<type>select</type>
-        <renderType>selectSingle</renderType>
-				<items>
-				   <numIndex index="0">
-					 <numIndex index="0">News List</numIndex>
-					 <numIndex index="1">News->list;News->show</numIndex>
-				   </numIndex>
-				   <numIndex index="1">
-					 <numIndex index="0">Category Single</numIndex>
-					 <numIndex index="1">category->list</numIndex>
-				   </numIndex>
-				   <numIndex index="2">
-					 <numIndex index="0">News Show</numIndex>
-					 <numIndex index="1">News->show</numIndex>
-				   </numIndex>
-				 </items>
-			  </config>
-			</TCEforms>
-		  </switchableControllerActions>
 		  <settings.flexform.limit>
   			<TCEforms>
   			  <label>Limit</label>
