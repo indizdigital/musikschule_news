@@ -56,8 +56,8 @@ class NewsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         }
 
 
-        $orderBy = explode(",",$sorting);
-
+        $orderBy = explode("_",$sorting);
+        
         $queryBuilder->select('*')->from($table)->orWhere(
             ...$catConstraints
         )->orderBy($orderBy[0],strtoupper($orderBy[1]));

@@ -49,19 +49,19 @@
   				<items>
   				   <numIndex index="0">
     					 <numIndex index="0">Startdatum (aufsteigend)</numIndex>
-    					 <numIndex index="1">starttime,asc</numIndex>
+    					 <numIndex index="1">starttime_asc</numIndex>
   				   </numIndex>
    				   <numIndex index="1">
      					 <numIndex index="0">Startdatum (absteigend)</numIndex>
-     					 <numIndex index="1">starttime,desc</numIndex>
+     					 <numIndex index="1">starttime_desc</numIndex>
    				   </numIndex>
    				   <numIndex index="2">
      					 <numIndex index="0">Enddatum (aufsteigend)</numIndex>
-     					 <numIndex index="1">endtime,asc</numIndex>
+     					 <numIndex index="1">endtime_asc</numIndex>
    				   </numIndex>
   				   <numIndex index="3">
     					 <numIndex index="0">Enddatum (absteigend)</numIndex>
-    					 <numIndex index="1">endtime,desc</numIndex>
+    					 <numIndex index="1">endtime_desc</numIndex>
   				   </numIndex>
   				 </items>
   			  </config>

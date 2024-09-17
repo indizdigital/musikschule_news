@@ -31,31 +31,39 @@ Otherwise your changes will be overwritten the next time you save the extension 
                   <f:then>
                     <f:if condition="{anews.endtime}">
                       <p>
-                        <f:format.date format="d.m.Y">{anews.endtime}</f:format.date>
+                        <f:format.date format="%A, %d.%m.%Y">{anews.endtime}</f:format.date>
                       </p>
                     </f:if>
                   </f:then>
                   <f:else>
                     <f:if condition="{anews.starttime}">
                       <p>
-                        <f:format.date format="d.m.Y">{anews.starttime}</f:format.date>
+                        <f:format.date format="%A, %d.%m.%Y">{anews.starttime}</f:format.date>
                       </p>
                     </f:if>
                   </f:else>
                 </f:if>
                 <h3 class="element-header">{anews.title}</h3>
               </header>
-
+              <f:if condition="{anews.image}">
+                <a class="lightbox" rel="lightbox-group-{anews.uid}" href="{f:uri.image(src: '{anews.image.originalResource.publicUrl}', minWidth: 375, maxWidth: 1200)}" data-lightbox-width="{anews.image.originalResource.properties.width}" data-lightbox-height="{anews.image.originalResource.properties.height}">
+                    <f:image src="{anews.image.originalResource.publicUrl}" width="200"/>
+                </a>
+              </f:if>
               <f:if condition="{anews.pdf}">
                 <p><a href="{anews.pdf.originalResource.publicUrl}">
                   <span>{anews.pdf.originalResource.name}</span>
                 </a></p>
               </f:if>
               <f:if condition="{anews.bodytext}">
-                <p><f:format.raw>{anews.bodytext}</f:format.raw></p>
+                <p><f:format.html>{anews.bodytext}</f:format.html></p>
               </f:if>
               <f:link.action action="show" arguments="{news : anews}">{anews.href}</f:link.action>
-
+              <f:if condition="{anews.teaser}">
+                <div class="video-container">
+                    <div class="responsive-iframe"><f:format.raw>{anews.teaser}</f:format.raw></p>
+                </div>
+              </f:if>
             </div>
             <f:if condition="!{it.isLast}">
                 <hr/>

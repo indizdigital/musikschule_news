@@ -10,7 +10,6 @@ return [
         'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
         'delete' => 'deleted',
-        'sortby' => 'starttime DESC,endtime ASC',
         'enablecolumns' => [
             'disabled' => 'hidden',
             'starttime' => 'starttime',

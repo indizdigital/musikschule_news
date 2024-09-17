@@ -11,7 +11,7 @@ defined('TYPO3') || die();
         ],
         // non-cacheable actions
         [
-            \Indiz\IndizNews\Controller\NewsController::class => 'list',
+            \Indiz\IndizNews\Controller\NewsController::class => 'list,show',
             \Indiz\IndizNews\Controller\CategoryController::class => ''
         ]
     );
