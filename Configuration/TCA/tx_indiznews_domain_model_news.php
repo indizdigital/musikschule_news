@@ -148,8 +148,7 @@ return [
                 'foreign_table_field' => 'tablenames',
                 'foreign_match_fields' => [
                     'fieldname' => 'image',
-                    'tablenames' => 'tx_indiznews_domain_model_news',
-                    'table_local' => 'sys_file',
+                    'tablenames' => 'tx_indiznews_domain_model_news'
                 ],
                 'foreign_label' => 'uid_local',
                 'foreign_selector' => 'uid_local',
@@ -177,8 +176,7 @@ return [
                 'foreign_table_field' => 'tablenames',
                 'foreign_match_fields' => [
                     'fieldname' => 'pdf',
-                    'tablenames' => 'tx_indiznews_domain_model_news',
-                    'table_local' => 'sys_file',
+                    'tablenames' => 'tx_indiznews_domain_model_news'
                 ],
                 'foreign_label' => 'uid_local',
                 'foreign_selector' => 'uid_local',
